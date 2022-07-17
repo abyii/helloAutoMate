@@ -1,6 +1,3 @@
-from tokenize import String
-from turtle import up
-from matplotlib.font_manager import json_dump
 from quart import Quart, request
 from telegram.ext.updater import Updater
 from telegram.update import Update
