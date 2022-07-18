@@ -10,7 +10,7 @@ dependencies = [
     "python-telegram-bot>=13.13",
     "quart>=0.17.0",
     "python-dotenv>=0.20.0",
-    "pymongo>=4.1.1",
+    "pymongo[srv]>=4.1.1",
 ]
 requires-python = ">=3.10"
 license = {text = "MIT"}

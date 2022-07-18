@@ -48,6 +48,12 @@ requires_python = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 summary = "Cross-platform colored terminal text."
 
 [[package]]
+name = "dnspython"
+version = "2.2.1"
+requires_python = ">=3.6,<4.0"
+summary = "DNS toolkit"
+
+[[package]]
 name = "gunicorn"
 version = "20.1.0"
 requires_python = ">=3.5"
@@ -129,6 +135,17 @@ name = "pymongo"
 version = "4.1.1"
 requires_python = ">=3.6.2"
 summary = "Python driver for MongoDB <http://www.mongodb.org>"
+
+[[package]]
+name = "pymongo"
+version = "4.1.1"
+extras = ["srv"]
+requires_python = ">=3.6.2"
+summary = "Python driver for MongoDB <http://www.mongodb.org>"
+dependencies = [
+    "dnspython<3.0.0,>=1.16.0",
+    "pymongo==4.1.1",
+]
 
 [[package]]
 name = "python-dotenv"
@@ -237,7 +254,7 @@ dependencies = [
 
 [metadata]
 lock_version = "4.0"
-content_hash = "sha256:86f0ee739e265f65988a7567a049bcad0f55d30adb306c29c8f22564fb60e97f"
+content_hash = "sha256:e6e1cc6db00a4b18ed4b7c8a9daeb8b6bda760a05142c5e44425971379cb1ab5"
 
 [metadata.files]
 "aiofiles 0.8.0" = [
@@ -266,6 +283,10 @@ content_hash = "sha256:86f0ee739e265f65988a7567a049bcad0f55d30adb306c29c8f22564f
 "colorama 0.4.5" = [
     {url = "https://files.pythonhosted.org/packages/77/8b/7550e87b2d308a1b711725dfaddc19c695f8c5fa413c640b2be01662f4e6/colorama-0.4.5-py2.py3-none-any.whl", hash = "sha256:854bf444933e37f5824ae7bfc1e98d5bce2ebe4160d46b5edf346a89358e99da"},
     {url = "https://files.pythonhosted.org/packages/2b/65/24d033a9325ce42ccbfa3ca2d0866c7e89cc68e5b9d92ecaba9feef631df/colorama-0.4.5.tar.gz", hash = "sha256:e6c6b4334fc50988a639d9b98aa429a0b57da6e17b9a44f0451f930b6967b7a4"},
+]
+"dnspython 2.2.1" = [
+    {url = "https://files.pythonhosted.org/packages/9b/ed/28fb14146c7033ba0e89decd92a4fa16b0b69b84471e2deab3cc4337cc35/dnspython-2.2.1-py3-none-any.whl", hash = "sha256:a851e51367fb93e9e1361732c1d60dab63eff98712e503ea7d92e6eccb109b4f"},
+    {url = "https://files.pythonhosted.org/packages/99/fb/e7cd35bba24295ad41abfdff30f6b4c271fd6ac70d20132fa503c3e768e0/dnspython-2.2.1.tar.gz", hash = "sha256:0f7569a4a6ff151958b64304071d370daa3243d15941a7beedf0c9fe5105603e"},
 ]
 "gunicorn 20.1.0" = [
     {url = "https://files.pythonhosted.org/packages/e4/dd/5b190393e6066286773a67dfcc2f9492058e9b57c4867a95f1ba5caf0a83/gunicorn-20.1.0-py3-none-any.whl", hash = "sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e"},
