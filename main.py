@@ -1,16 +1,14 @@
 from quart import Quart, request
-from telegram.ext.updater import Updater
 from telegram.update import Update
-from telegram.ext.callbackcontext import CallbackContext
-from telegram.ext.commandhandler import CommandHandler
-from telegram.ext.messagehandler import MessageHandler
-from telegram.ext.filters import Filters
 import telegram
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Quart(__name__)
 
-telegram_bot_token="5409399469:AAGRoB-pli3h6hcF42kvjyPbNBirjeUaUdg"
+telegram_bot_token=os.environ['TELE_KEY']
 subscribed_ids = set()
   
 bot = telegram.Bot(telegram_bot_token)
@@ -59,7 +57,7 @@ async def triggerSpotify():
             data = await request.get_json()
             info = list(data.values())
             for id in subscribed_ids:
-                bot.send_message(text=f'Abhishek just liked {info[2]} by {info[0]}. {info[1]}', chat_id=id)
+                bot.send_message(text=f'New song on da playlist! {info[2]} by {info[0]}. {info[1]}', chat_id=id)
         return "done" 
     except:
         print('An exception occurred')
