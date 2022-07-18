@@ -14,7 +14,7 @@ people = db["people"]
 
 subscribed_ids = set()
 bot = telegram.Bot(os.environ['TELE_KEY'])
-hook = bot.set_webhook("https://d4a1-2409-4071-2283-f481-9dc1-f1f5-dd02-c7b1.in.ngrok.io/")
+hook = bot.set_webhook("https://helloautomate.herokuapp.com/")
 if not hook:
     print("Webhook setup failed. exiting.");
     exit(0)
