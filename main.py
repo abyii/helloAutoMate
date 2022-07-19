@@ -69,6 +69,7 @@ commands:
                 else:
                     bot.send_message(chat_id = chat_id, text='''You haven't subscribed to unsubscibe.''')
                 return "201"
+            
             else:
                 bot.send_message(chat_id = chat_id, text="unknown command bro")
                 return "201"
@@ -80,10 +81,12 @@ async def triggerSpotify():
     try:
         if request.method =='POST':
             data = await request.get_json()
-            info = list(data.values())
+            track = data['track']
+            artist = data['artist']
+            link = data['link']
             friends = people.find({"preferSpotify":True})
             for friend in friends:
-                bot.send_message(text=f'New song on da playlist! {info[2]} by {info[0]}. {info[1]}', chat_id=friend["chat_id"])
+                bot.send_message(text=f'New song on da playlist! {track} by {artist}. {link}', chat_id=friend["chat_id"])
         return "done" 
     except:
         print('An exception occurred')
